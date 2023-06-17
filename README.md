@@ -14,3 +14,7 @@ Based on the famous Twitter's Snowflake ID generator design, this repo contains 
 - Sortable by UTC time
 - 41-bit timestamp info => 2^41 - 1 = 2199023255551 ms => 69 years
 - Sequence # => 2^12 = 4096 possible outcomes per millisecond
+
+## Things to check out
+- Sony took the original Snowflake ID generator design and tweaked the bit structure differently. Also written in Go and the ID generator is more performant and scalable. You should check it out [here](https://github.com/sony/sonyflake)
+- This repo is a toy implementation of Snowflake ID as I have mentioned. In the production environment, you'll need to make sure that all server instances will have same clock otherwise the timestamp portion is not idempotent. Zookeeper + NTP should be a good direction to explore further.
