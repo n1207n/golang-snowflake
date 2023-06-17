@@ -26,8 +26,8 @@ func NewSnowflakeWorker(workerId int64) *SnowflakeWorker {
 	return &SnowflakeWorker{workerId: workerId, timestamp: 0, sequenceId: 0}
 }
 
-// nextID - Returns a new unique ID given SnowflakeWorker instance
-func (s *SnowflakeWorker) nextID() int64 {
+// NextID - Returns a new unique ID given SnowflakeWorker instance
+func (s *SnowflakeWorker) NextID() int64 {
 	s.mutex.Lock()
 	defer s.mutex.Unlock()
 
