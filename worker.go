@@ -1,1 +1,0 @@
-package golang_snowflake_id_generator
